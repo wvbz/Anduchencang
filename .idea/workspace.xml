@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99751d24-eb6f-431b-8646-09dc666b2d06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homepage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.html" beforeDir="false" afterPath="$PROJECT_DIR$/project.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590898589190</updated>
-      <workItem from="1590898593482" duration="14698000" />
+      <workItem from="1590898593482" duration="17563000" />
     </task>
     <task id="LOCAL-00001" summary="a test for bootstrap framework">
       <created>1590898805119</created>
@@ -114,7 +114,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591149503652</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="project search page">
+      <created>1591149521890</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591149521890</updated>
+    </task>
+    <task id="LOCAL-00009" summary="project search page">
+      <created>1591149694737</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591149694737</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,8 +149,8 @@
     <MESSAGE value="a test for bootstrap framework" />
     <MESSAGE value="Merge branch 'master' of https://github.com/wvbz/Anduchencang" />
     <MESSAGE value="home page" />
-    <MESSAGE value="project search page" />
     <MESSAGE value="login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="login page" />
+    <MESSAGE value="project search page" />
+    <option name="LAST_COMMIT_MESSAGE" value="project search page" />
   </component>
 </project>
