@@ -37,16 +37,65 @@
                     </div>
                 </li>
             </ul>
-            <svg class="bi bi-bell" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
-                <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-            </svg>
+            <a href="inform.html">
+                <svg class="bi bi-bell" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" href="inform.html">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+                    <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg>
+            </a>
+            <a href="login.html">
+                <button type="button" class="btn btn-outline-primary" >登录</button>
+            </a>
+
         </div>
     </nav>
+    <div id="search_div">
+        <form name="search_form" id="sform">
+            <div class="m10 search_form vform" id="search_form" style="height: auto; overflow: hidden;">
+                <input type="hidden" name="tag" value=""><input type="hidden" name="area" value="0"><input type="hidden" name="area2" value="0"><input type="hidden" name="state" value="2"><input type="hidden" name="scope" value=""><input type="hidden" name="obj" value=""><input type="hidden" name="members" value=""><input type="hidden" name="mode" value="list">    <ul class="list_search">
+                <li>
+                    <span class="pretit">项目区域</span>
+
+                </li>
+                <li>
+                    <span class="pretit">服务类别</span>
+                    <span>全部</span><a href="?tag=社区服务&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">社区服务</a>        </li>
+                <li>
+                    <span class="pretit">项目状态</span>
+                    <a href="?tag=&amp;area=0&amp;area2=0&amp;state=&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">全部</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=1&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">招募待启动</a><span>招募中</span><a href="?tag=&amp;area=0&amp;area2=0&amp;state=3&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">招募已结束</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=4&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">已结项</a>        </li>
+                <li>
+                    <span class="pretit">报名范围</span>
+                    <span>全部</span><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=0&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">公开招募</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=1&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">仅招募实名志愿者</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=2&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">指定志愿团体招募</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=3&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">设定免审密码招募</a>        </li>
+                <li>
+                    <span class="pretit">服务对象</span>
+                    <span>全部</span><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=儿童&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">儿童</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=青少年&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">青少年</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=孤寡老人&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">孤寡老人</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=残障人士&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">残障人士</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=优抚对象&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">优抚对象</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=特困群体&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">特困群体</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=其他&amp;time_start=&amp;time_end=&amp;name=&amp;members=&amp;mode=list">其他</a>        </li>
+                <li>
+                    <span class="pretit">项目人数</span>
+                    <span>全部</span><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=1&amp;mode=list">0</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=2&amp;mode=list">1-100</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=3&amp;mode=list">101-200</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=4&amp;mode=list">201-500</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=5&amp;mode=list">501-1000</a><a href="?tag=&amp;area=0&amp;area2=0&amp;state=2&amp;scope=&amp;obj=&amp;time_start=&amp;time_end=&amp;name=&amp;members=6&amp;mode=list">1000以上</a>        </li>
+            </ul>
+
+
+            </div>
+            <div id="explode_div"><a href="javascript:void(0);">收起</a></div>
+            <div class="list_top clearfix">
+                <div class="l">&nbsp;
+                    项目起止日期&nbsp;<input name="time_start" type="text" class="ipt1" onclick="new Calendar().show(this);" style="width:80px;" value="">&nbsp;
+                    至&nbsp;<input onclick="new Calendar().show(this);" name="time_end" type="text" class="ipt1" style="width:80px;" value="">&nbsp;
+                    项目ID&nbsp;<input name="opp_id" type="text" class="ipt1" style="width:80px;" value="">&nbsp;
+                    项目名称&nbsp;<input name="name" type="text" class="ipt1" style="width:140px;" value="">&nbsp;
+                    <a href="javascript:void(0);" onclick="$('#sform').submit();" class="but2">搜索</a>
+                </div>
+                <div class="r">
+                    <a class="atxt" href="/app/opp/list.php" title="列表模式"></a>
+                    <a class="amap" href="/app/opp/list.php?mode=map" title="地图模式"></a>&nbsp;&nbsp;
+                </div>
+            </div>
+        </form>
+    </div>
     <div class="card" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">志愿项目1</h5>
+            <h5 class="card-title">项目编号 志愿项目1</h5>
             <p class="card-text">志愿项目的简单描述</p>
             <a href="#" class="btn btn-primary">项目详情</a>
         </div>
