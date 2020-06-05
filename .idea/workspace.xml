@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="99751d24-eb6f-431b-8646-09dc666b2d06" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +30,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../20170723095157979/201707232150" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chahua3142" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590898589190</updated>
-      <workItem from="1590898593482" duration="38268000" />
+      <workItem from="1590898593482" duration="40773000" />
     </task>
     <task id="LOCAL-00001" summary="a test for bootstrap framework">
       <created>1590898805119</created>
@@ -185,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591353535461</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="adjust login page">
+      <created>1591354421441</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1591354421441</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +220,7 @@
     <MESSAGE value="notification page" />
     <MESSAGE value="project search page" />
     <MESSAGE value="divide register page and login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="divide register page and login page" />
+    <MESSAGE value="adjust login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust login page" />
   </component>
 </project>
