@@ -1,10 +1,10 @@
-<!--<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>-->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>注册</title>
+    <title>登录</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="icon" href="images/favicon.ico">
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -61,55 +61,29 @@ pageEncoding="UTF-8"%>-->
         </div>
     </div>
 </header>
-    <div id="register">
-        <h3 class="text-center text-white pt-5">用户注册</h3>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">用户登录</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="RegisterServlet" method="post">
-                            <%
-                                String errorMessage2 = (String)request.getAttribute("errorMessage2");
-
-                                if(errorMessage2 == null){
-                                errorMessage2 = "输入您的密码";
-                                }
-                            %>
-                            <h3 class="text-center text-info">用户注册</h3>
+                        <form id="login-form" class="form" action="LoginServlet" method="post">
+                            <h3 class="text-center text-info">用户登录</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">用户名</label>
-                                    <input type="username" class="form-control" id="username">
+                                <label for="username" class="text-info">用户名：</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                 <label for="email" class="text-info">邮箱</label>
-                                    <input type="email" class="form-control" id="email">
+                                <label for="password" class="text-info">密码：</label><br>
+                                <input type="text" name="password" id="password" class="form-control">
                             </div>
-                            <div class="form-group row">
-                                    <label for="Password" class="text-info">密码</label>
-                                        <input type="password" class="form-control" id="Password"placeholder=<%= errorMessage2%>>
-                                </div>
-                            <div class="form-group row">
-                                    <label for="Password" class="text-info">确认密码</label>
-                                        <input type="password" class="form-control" >
-                                </div>
-                            <div class="form-group row">
-                                    <label for="phonenumber" class="text-info">手机号</label>
-                                        <input type="phonenumber" class="form-control" id="phonenumber">
-                                </div>
-                            <div class="form-group row">
-                                    <label for="IDnumber" class="text-info">身份证号</label>
-                                    <input type="IDnumber" class="form-control" id="IDnumber" aria-describedby="IDHelp">
-                                    <small id="IDHelp" class="form-text text-muted">仅用于实名认证，我们不会向任何人泄露您的个人信息</small>
-                                </div>
-                            <label>
-                                    <input type="radio" name="RadioGroup1" value="1" /> 志愿者 </label>
-                            <label>
-                                        <input type="radio" name="RadioGroup1" value="2" /> 志愿组织 </label>
-                            <label>
-                                        <input type="radio" name="RadioGroup1" value="3" /> 管理员</label>
-
-                    </div>
-                            <button type="submit" class="btn btn-primary">确定</button>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>记住我</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="确定">
+                            </div>
+                            <div id="register-link" class="text-right">
+                                <a href="register.jsp" class="text-info">注册</a>
+                            </div>
                         </form>
                     </div>
                 </div>
