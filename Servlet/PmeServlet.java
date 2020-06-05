@@ -1,3 +1,4 @@
+package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -8,6 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Dao.ApplyDao;
+import Dao.ProjectDao;
+import Dao.PublisherDao;
+import Entity.Project;
+import Entity.Publisher;
+import Entity.apply_project;
+
 /**
  * Servlet implementation class PmeServlet
  */
@@ -16,7 +24,6 @@ public class PmeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	DBUtil dbUtil = new DBUtil();
-	ArrayList<publisher> publisherArrayList = new ArrayList<publisher>();
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -43,13 +50,25 @@ public class PmeServlet extends HttpServlet {
 		//doGet(request, response);
         request.setCharacterEncoding("utf-8");
 		
-        //从数据库中获取发布者个人信息arraylist 
+        //从数据库中获取发布者个人信息
 		Connection con = null;
 		try {
 			con = dbUtil.getConnection();
-
-		    PublisherDao publisher=new PublisherDao();
-			publisherArrayList = publisher.showPublisher(con);			
+			
+			
+			String pub_id = request.getParameter("pub_id");	
+			System.out.println(pub_id);
+			
+            PublisherDao publisher = new PublisherDao();
+            ProjectDao project = new ProjectDao();
+            ApplyDao apply = new ApplyDao();
+			Publisher publisherShow = publisher.showPublisher(con,pub_id);
+			ArrayList<Project> projectDoing = project.showPdoing(con, pub_id);
+			ArrayList<apply_project> applyList = apply.showApply(con, pub_id);
+			
+			request.setAttribute("publisherShow", publisherShow);
+			request.setAttribute("projectDoing", projectDoing);
+			request.setAttribute("applyList", applyList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
@@ -60,7 +79,7 @@ public class PmeServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		request.setAttribute("publisherArrayList", publisherArrayList);
+		
 		request.getRequestDispatcher("Pme.jsp").forward(request,response);
 	}
 

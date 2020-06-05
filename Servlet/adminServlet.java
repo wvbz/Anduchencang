@@ -1,3 +1,4 @@
+package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Date;
@@ -10,6 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DBTool.DBUtil;
+import Dao.ApplyDao;
+import Dao.ProjectDao;
+import Dao.PublisherDao;
+import Entity.Project;
+import Entity.Publisher;
+import Entity.apply_project;
 
 /**
  * Servlet implementation class adminServlet
@@ -49,6 +56,30 @@ public class adminServlet extends HttpServlet {
 		 Connection con = null;
 		 
 		 //从数据库中获取待审核发布者表arraylist和待审核项目表arraylist
+		 try {
+				con = dbUtil.getConnection();
+				
+	            PublisherDao publisher = new PublisherDao();
+	            ProjectDao project = new ProjectDao();
+				ArrayList<Publisher> dsPublisher = publisher.showDSpub(con);
+				ArrayList<Project> dsProject = project.showDSpro(con);
+				
+				request.setAttribute("dsPublisher", dsPublisher);
+				request.setAttribute("dsProject", dsProject);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} 
+			finally {
+				try {
+					dbUtil.closeCon(con);;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+			request.getRequestDispatcher("admin.jsp").forward(request,response); 
+		 
 		
 	}
 }

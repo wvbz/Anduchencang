@@ -1,6 +1,6 @@
+package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -9,21 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DBTool.DBUtil;
+import Dao.PublisherDao;
+import Entity.Publisher;
 
 /**
- * Servlet implementation class trainingServlet
- */
-@WebServlet("/trainingServlet")
-public class trainingServlet extends HttpServlet {
+ * Servlet implementation class publisherServlet
+ */ 
+@WebServlet("/publisherServlet")
+public class publisherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	DBUtil dbUtil = new DBUtil();
-       
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public trainingServlet() {
+    public publisherServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,37 +44,32 @@ public class trainingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		 request.setCharacterEncoding("utf-8");
-		 response.setCharacterEncoding("utf-8");
-		 
-		 Connection con = null;
-		 try {
-			 con = dbUtil.getConnection();
+        request.setCharacterEncoding("utf-8");
+		
+        //从数据库中获取发布者信息 
+		Connection con = null;
+		try {
+			con = dbUtil.getConnection();
+			
+			String pub_id = request.getParameter("pub_id");	
+			System.out.println(pub_id);
 
-			 String pro_id = request.getParameter("pro_id");
-			 String t_content = request.getParameter("t_content");
-			 Date t_s_time = request.getParameter("t_s_time");
-			 Date t_e_time = request.getParameter("t_e_time");
-				
-			 System.out.println(pro_id);
-			 System.out.println(t_content);
-			 System.out.println(t_s_time);
-			 System.out.println(t_e_time);
-				
-			 TrainDao train=new TrainDao();
-			 train.createTrain(pro_id, t_content, t_s_time, t_e_time);
-				
+		    PublisherDao publisher=new PublisherDao();
+		    Publisher pub = publisher.showPublisher(con, pub_id);
+		    
+		    request.setAttribute("pub", pub);
+		    
 		} catch (Exception e) {
-			 e.printStackTrace();
+			e.printStackTrace();
 		} 
 		finally {
-			 try {
+			try {
 				dbUtil.closeCon(con);;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		request.getRequestDispatcher("training.jsp").forward(request,response);
-		
+		request.getRequestDispatcher("publisher.jsp").forward(request,response);
 	}
+
 }

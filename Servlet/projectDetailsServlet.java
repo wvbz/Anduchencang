@@ -1,3 +1,4 @@
+package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -8,26 +9,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import Dao.ProjectDao;
+import Entity.Project;
+
 /**
- * Servlet implementation class publisherServlet
- */ 
-@WebServlet("/publisherServlet")
-public class publisherServlet extends HttpServlet {
+ * Servlet implementation class projectNowServlet
+ */
+@WebServlet("/projectDetailsServlet")
+public class projectDetailsServlet  extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	DBUtil dbUtil = new DBUtil();
-	ArrayList<publisher> publisherinfoArrayList = new ArrayList<publisher>();
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public publisherServlet() {
+    public projectDetailsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletRes ponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -43,13 +47,19 @@ public class publisherServlet extends HttpServlet {
 		//doGet(request, response);
         request.setCharacterEncoding("utf-8");
 		
-        //从数据库中获取发布者信息arraylist 
+        //从数据库中获取项目信息
 		Connection con = null;
 		try {
 			con = dbUtil.getConnection();
+			 
+			String pro_id = request.getParameter("pro_id");	
+			System.out.println(pro_id);
 
-		    PublisherDao publisher=new PublisherDao();
-		    publisherinfoArrayList = publisher.showPublisherInfo(con);			
+			ProjectDao project=new ProjectDao();
+			Project projectDetails=project.showProject(con,pro_id);
+			
+			request.setAttribute("projectDetails", projectDetails);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
@@ -60,8 +70,8 @@ public class publisherServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		request.setAttribute("publisherinfoArrayList", publisherinfoArrayList);
-		request.getRequestDispatcher("publisher.jsp").forward(request,response);
+		
+		request.getRequestDispatcher("审核项目.jsp").forward(request,response);
 	}
 
 }

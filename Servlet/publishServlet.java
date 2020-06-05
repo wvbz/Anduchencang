@@ -1,6 +1,7 @@
+package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import DBTool.DBUtil;
+import Dao.ProjectDao;
+import Entity.Project;
 
 /**
  * Servlet implementation class publishServlet
@@ -49,7 +52,8 @@ public class publishServlet extends HttpServlet {
 		 Connection con = null;
 		 try {
 			 con = dbUtil.getConnection();
-
+			 
+             String pub_id = request.getParameter("pub_id");
 			 String pro_id = request.getParameter("pro_id");
 			 String pro_name = request.getParameter("pro_name");
 			 String pro_intro = request.getParameter("pro_intro");
@@ -60,7 +64,8 @@ public class publishServlet extends HttpServlet {
 			 String pro_type = request.getParameter("pro_type");
 			 String pro_place = request.getParameter("pro_place");
 			 int v_num = request.getParameter("v_num");
-				
+			
+			 System.out.println(pub_id);
 			 System.out.println(pro_id);
 			 System.out.println(pro_name);
 			 System.out.println(pro_intro);
@@ -72,8 +77,9 @@ public class publishServlet extends HttpServlet {
 			 System.out.println(pro_place);
 			 System.out.println(v_num);
 				
-			 ProjectDao project=new ProjectDao();
-			 project.createProject(pro_id, pro_name, pro_intro, pro_info,pro_state,pro_s_time,pro_e_time,pro_type,pro_place,v_num);
+			 Project project=new Project(pro_id,pro_name,pro_intro,pro_info,pro_state,pro_s_time,pro_e_time,pro_type,pro_place,v_num);
+			 ProjectDao pro = new ProjectDao();
+			 pro.createProject(con,project,pub_id);
 				
 		} catch (Exception e) {
 			 e.printStackTrace();

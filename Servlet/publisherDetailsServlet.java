@@ -1,3 +1,4 @@
+package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -8,20 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Dao.PublisherDao;
+import Entity.Publisher;
+
 /**
- * Servlet implementation class applyDetailsServlet
- */
-@WebServlet("/applyDetailsServlet")
-public class applyDetailsServlet extends HttpServlet {
+ * Servlet implementation class publisherServlet
+ */ 
+@WebServlet("/publisherDetailsServlet")
+public class publisherDetailsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	DBUtil dbUtil = new DBUtil();
-	ArrayList<apply> applyArrayList = new ArrayList<apply>();
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public applyDetailsServlet() {
+    public publisherDetailsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,13 +46,19 @@ public class applyDetailsServlet extends HttpServlet {
 		//doGet(request, response);
         request.setCharacterEncoding("utf-8");
 		
-        //从数据库中获取申请表信息arraylist
+        //从数据库中获取发布者信息 
 		Connection con = null;
 		try {
 			con = dbUtil.getConnection();
+			
+			String pub_id = request.getParameter("pub_id");	
+			System.out.println(pub_id);
 
-		    VolunteerDao volunteer=new VolunteerDao();
-		    applyArrayList = volunteer.showApply(con);			
+		    PublisherDao publisher=new PublisherDao();
+		    Publisher pub = publisher.showPublisher(con, pub_id);
+		    
+		    request.setAttribute("pub", pub);
+		    
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
@@ -60,8 +69,8 @@ public class applyDetailsServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		request.setAttribute("applyArrayList", applyArrayList);
-		request.getRequestDispatcher("applyDetails.jsp").forward(request,response);
+		request.getRequestDispatcher("审核发布者.jsp").forward(request,response);
 	}
 
 }
+
