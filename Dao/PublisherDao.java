@@ -22,7 +22,7 @@ public class PublisherDao {
 		pstmt1.setInt(3, publisher.getContact());
 		pstmt1.setInt(4, publisher.getIDnum());
 		pstmt1.setString(5,"1");
-		pstmt1.setInt(6, publisher.getCredit());
+		pstmt1.setInt(6, 100);
 	
 		boolean t1;
 		if(pstmt1.executeUpdate()>0) {

@@ -26,14 +26,15 @@ public class apply_project {
 		this.career=career;
 	}
 	
-	public apply_project(String v_id,String pro_id,String registration_info) {
-		this.v_id=v_id;
-		this.pro_id = pro_id;
+	public apply_project(String name,String idnumber,String phonenumber,String career,String registration_info) {
+		this.name=name;
+		this.idnumber=idnumber;
+		this.phonenumber=phonenumber;
+		this.career=career;
 		this.registration_info=registration_info;
 	}
 	
-	public apply_project(String v_id,String name,String idnumber,String phonenumber,String career) {
-		this.v_id=v_id;
+	public apply_project(String name,String idnumber,String phonenumber,String career) {
 		this.name=name;
 		this.idnumber=idnumber;
 		this.phonenumber=phonenumber;

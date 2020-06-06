@@ -67,11 +67,13 @@ public class ApplyDao {
 		apply_project applyShow=null ;
 		ResultSet rs = pstmt.executeQuery();
 		
-		String vid = rs.getString("v_id");
-		String pid = rs.getString("pro_id");
+		String name = rs.getString("name");
+		String idnumber = rs.getString("idnumber");
+		String phonenumber = rs.getString("phonenumber");
+		String career = rs.getString("career");
 		String registration_info = rs.getString("registration_info");
 			
-		applyShow = new apply_project(vid,pid,registration_info);
+		applyShow = new apply_project(name,idnumber,phonenumber,career,registration_info);
 		
 		return applyShow;
 	}	
@@ -115,13 +117,12 @@ public class ApplyDao {
 		ResultSet rs1 = pstmt1.executeQuery();
 		
 		while(rs1.next()){ 
-			String v_id = rs1.getString("v_id");
 		    String name = rs1.getString("name");
 		    String idnumber = rs1.getString("idnumber");
 		    String phonenumber = rs1.getString("phonenumber");
 		    String career = rs1.getString("career");
 		    
-		    apply_project volunteerShow = new apply_project(v_id,name,idnumber,phonenumber,career);
+		    apply_project volunteerShow = new apply_project(name,idnumber,phonenumber,career);
 		    volunteerArrayList.add(volunteerShow);
 		 }
 			
