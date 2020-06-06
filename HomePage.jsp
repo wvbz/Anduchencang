@@ -92,14 +92,14 @@ pageEncoding="UTF-8"%
 			<div class="container_12">
 				<div class="grid_12">
 					<h1>
-						<a href="HomePage.html">
+						<a href="HomePage.jsp">
 							<img src="images/logo.png" alt="Your Happy Family">
 						</a>
 					</h1>
 					<div class="menu_block">
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 							<ul class="sf-menu">
-								<li class="current"><a href="HomePage.html">首页</a>
+								<li class="current"><a href="HomePage.jsp">首页</a>
 									<ul>
 										<li><a href="#">history</a></li>
 										<li><a href="#">offers</a></li>
@@ -110,10 +110,10 @@ pageEncoding="UTF-8"%
 										</ul>
 									</ul>
 								</li>
-								<li><a href="index-1.html">志愿快讯</a></li>
-								<li><a href="index-2.html">志愿项目</a></li>
-								<li><a href="index-3.html">志愿团体</a></li>
-								<li><a href="index-4.html">我的</a></li>
+								<li><a href="index-1.jsp">志愿快讯</a></li>
+								<li><a href="index-2.jsp">志愿项目</a></li>
+								<li><a href="index-3.jsp">志愿团体</a></li>
+								<li><a href="me.jsp">我的</a></li>
 							</ul>
 						</nav>
 						<div class="clear"></div>
@@ -170,7 +170,7 @@ pageEncoding="UTF-8"%
 						<div class="block2 maxheight">
 							<div class="title">最新项目</div>
 							<div class="pad">
-								最近更新项目列表，点击“Read More”查看更多项目&具体信息<div class="alright"><a href="project.html" class="btn">Read More</a></div>
+								最近更新项目列表，点击“Read More”查看更多项目&具体信息<div class="alright"><a href="project.jsp" class="btn">Read More</a></div>
 							</div>
 						</div>
 					</div>
@@ -178,14 +178,14 @@ pageEncoding="UTF-8"%
 						<div class="block2 maxheight">
 							<div class="title">志愿者</div>
 							<div class="pad">
-								查看个人信息、志愿项目<br><br><br> <div class="alright"><a href="index-4.html" class="btn">Read More</a></div>
+								查看个人信息、志愿项目<br><br><br> <div class="alright"><a href="me.jsp" class="btn">Read More</a></div>
 							</div>
 						</div>
 					</div>
 					<div class="grid_3">
 						<div class="block2 maxheight">
 							<div class="title">志愿团体</div>
-							<div class="pad">查找志愿团体<br><br><br><div class="alright"><a href="index-3.html" class="btn">Read More</a></div></div>
+							<div class="pad">查找志愿团体<br><br><br><div class="alright"><a href="index-3.jsp" class="btn">Read More</a></div></div>
 						</div>
 					</div>
 					<div class="clear"></div>

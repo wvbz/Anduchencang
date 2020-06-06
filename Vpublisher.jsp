@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%
     <div class="container_12">
         <div class="grid_12">
             <h1>
-                <a href="HomePage.html">
+                <a href="HomePage.jsp">
                     <img src="images/logo.png" alt="Your Happy Family">
                 </a>
             </h1>
@@ -49,7 +49,7 @@ pageEncoding="UTF-8"%
                 <nav class="horizontal-nav full-width horizontalNav-notprocessed">
                     <ul class="sf-menu">
                         <li>
-                            <a href="HomePage.html">首页</a>
+                            <a href="HomePage.jsp">首页</a>
                             <ul>
                                 <li><a href="#">history</a></li>
                                 <li><a href="#">offers</a></li>
@@ -62,10 +62,10 @@ pageEncoding="UTF-8"%
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="index-1.html">志愿快讯 </a></li>
-                        <li><a href="index-2.html">志愿项目</a></li>
-                        <li class="current"><a href="index-3.html">志愿团体 </a></li>
-                        <li><a href="index-4.html">我的</a></li>
+                        <li><a href="index-1.jsp">志愿快讯 </a></li>
+                        <li><a href="index-2.jsp">志愿项目</a></li>
+                        <li class="current"><a href="index-3.jsp">志愿团体 </a></li>
+                        <li><a href="me.jsp">我的</a></li>
                     </ul>
                 </nav>
                 <div class="clear"></div>

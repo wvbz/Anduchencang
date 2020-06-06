@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%
 			<div class="container_12">
 				<div class="grid_12">
 					<h1>
-						<a href="HomePage.html">
+						<a href="HomePage.jsp">
 							<img src="images/logo.png" alt="Your Happy Family">
 						</a>
 					</h1>
@@ -49,7 +49,7 @@ pageEncoding="UTF-8"%
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 							<ul class="sf-menu">
 								<li>
-									<a href="HomePage.html">首页</a>
+									<a href="HomePage.jsp">首页</a>
 									<ul>
 										<li><a href="#">history</a></li>
 										<li><a href="#">offers</a></li>
@@ -62,10 +62,10 @@ pageEncoding="UTF-8"%
 										</li>
 									</ul> 
 								</li>
-								<li><a href="index-1.html">志愿快讯 </a></li>
-								<li><a href="index-2.html">志愿项目</a></li>
-								<li class="current"><a href="index-3.html">志愿团体 </a></li>
-								<li><a href="index-4.html">我的</a></li>
+								<li><a href="index-1.jsp">志愿快讯 </a></li>
+								<li><a href="index-2.jsp">志愿项目</a></li>
+								<li class="current"><a href="index-3.jsp">志愿团体 </a></li>
+								<li><a href="me.jsp">我的</a></li>
 							</ul>
 						</nav>
 						<div class="clear"></div>
@@ -82,7 +82,7 @@ pageEncoding="UTF-8"%
 						<h3>北京市红十字志愿服务总队</h3>
 						<img src="images/index3-1.jpg" alt="" class="img_inner fleft">
 						<div class="extra_wrapper">
-							<p class="p1 col1"><a href="Vpublisher.html">人员规模：50000 </br> 加入方式：允许实名志愿者加入 </a></p>
+							<p class="p1 col1"><a href="Vpublisher.jsp">人员规模：50000 </br> 加入方式：允许实名志愿者加入 </a></p>
 							<p class="p2">
 								北京市志愿服务联合会成立于1993年12月5日，是由团市委发起，经市民政局核准登记，由热心志愿服务事业的社会各界人士自愿结成的联合全市各部门、各系统、各领域志愿者组织的“枢纽性”社会组织。依照《北京市志愿服务促进条例》规定，北京市志愿者联合会负责指导全市志愿服务工作的开展。
 							</p>

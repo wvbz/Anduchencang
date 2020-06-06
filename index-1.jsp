@@ -41,7 +41,7 @@ pageEncoding="UTF-8"%
 			<div class="container_12">
 				<div class="grid_12">
 					<h1>
-						<a href="HomePage.html">
+						<a href="HomePage.jsp">
 							<img src="images/logo.png" alt="Your Happy Family">
 						</a>
 					</h1>
@@ -49,7 +49,7 @@ pageEncoding="UTF-8"%
 						<nav class="horizontal-nav full-width horizontalNav-notprocessed">
 							<ul class="sf-menu">
 								<li>
-									<a href="HomePage.html">首页</a>
+									<a href="HomePage.jsp">首页</a>
 									<ul>
 										<li><a href="#">history</a></li>
 										<li><a href="#">offers</a></li>
@@ -62,10 +62,10 @@ pageEncoding="UTF-8"%
 										</li>
 									</ul> 
 								</li>
-								<li class="current"><a href="index-1.html">志愿快讯 </a></li>
-								<li><a href="index-2.html">志愿项目</a></li>
-								<li><a href="index-3.html">志愿团体 </a></li>
-								<li><a href="index-4.html">我的</a></li>
+								<li class="current"><a href="index-1.jsp">志愿快讯 </a></li>
+								<li><a href="index-2.jsp">志愿项目</a></li>
+								<li><a href="index-3.jsp">志愿团体 </a></li>
+								<li><a href="me.jsp">我的</a></li>
 							</ul>
 						</nav>
 						<div class="clear"></div>
@@ -83,17 +83,17 @@ pageEncoding="UTF-8"%
 							<h3>动态</h3>
 
 							<div class="video_block">
-								<div class="text2"><a rel="nofollow" href="news.html">北京市志愿服务联合会第二次会员代表大会召开</a></div>
+								<div class="text2"><a rel="nofollow" href="news.jsp">北京市志愿服务联合会第二次会员代表大会召开</a></div>
 								北京市志愿服务联合会第二次会员代表大会5月7日召开。市委常委、宣传部部长杜飞进出席会议并讲话。
 								<figure class="video"><img  src="images/index1-1.jpg"></figure>
 							</div>
 							<div class="video_block">；。
-								<div class="text2"><a rel="nofollow" href="news.html">冬奥组委志愿者部工作座谈交流会</a></div>
+								<div class="text2"><a rel="nofollow" href="news.jsp">冬奥组委志愿者部工作座谈交流会</a></div>
 								5月27日上午，市委宣传部副部长、首都文明办主任、冬奥组委志愿者部部长滕盛萍同志，团市委书记李军会等同志参加团市委、冬奥组委志愿者部工作座谈交流会。
 								<figure class="video"><img src="images/index1-2.jpg"></figure>
 							</div>
 							<div class="video_block">
-								<div class="text2"><a rel="nofollow" href="news.html">北京参加志交会集中活动</a></div>
+								<div class="text2"><a rel="nofollow" href="news.jsp">北京参加志交会集中活动</a></div>
 								12月1日-5日，由共青团中央、中央文明办、民政部、水利部、文化和旅游部、国家卫健委、中国残联、和中共广东省委、广东省人民政府共同举办的以“青春志愿行·共筑中国梦”为主题的2019年志交会在广东东莞成功举行。
 								<figure class="video"><img src="images/index1-3.jpg"></figure>
 							</div>
