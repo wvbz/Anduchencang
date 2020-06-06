@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>申请项目</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    <div id="apply">
+    <h3 class="text-center text-white pt-5">“项目1”项目申请表</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="LoginServlet" method="post">
+                        <h3 class="text-center text-info">“项目1”项目申请表</h3>
+                        <div class="form-group">
+                            <label for="name" class="text-info">志愿者姓名：</label><br>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="idnumber" class="text-info">身份证号：</label><br>
+                            <input type="text" name="idnumber" id="idnumber" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phonenumber" class="text-info">手机号：</label><br>
+                            <input type="text" name="phonenumber" id="phonenumber" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="career" class="text-info">职业：</label><br>
+                            <input type="text" name="career" id="career" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="info" class="text-info">个人简介（您曾参与过的其他项目，您的技能特长，您为什么想参与该项目）</label><br>
+                            <input type="text" name="info" id="info" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="file" class="text-info">简历（您可以直接上传您的简历）</label><br>
+                            <input type="file" name="file" id="file" class="input-file">
+                        </div><br>
+                        <div class="form-group">
+                            <center>
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="确认提交">
+                            </center>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
