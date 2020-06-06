@@ -14,13 +14,16 @@ import Entity.apply_project;
 public class ApplyDao {
 	//创建新申请表
 	public void createApply(Connection con,apply_project apply) throws SQLException {
-		String sql="insert into apply_project(v_id,pro_id,apply_state,registration_info,registration_state) values(?,?,?,?,?) ";
+		String sql="insert into apply_project(v_id,pro_id,apply_state,registration_info,name,idnumber,phonenumber,career) values(?,?,?,?,?,?,?,?) ";
 		PreparedStatement pstmt=con.prepareStatement(sql);
 		pstmt.setString(1,apply.getVid());
 		pstmt.setString(2,apply.getPid());
 		pstmt.setString(3,"1");
 		pstmt.setString(4,apply.getRinfo());
-		pstmt.setString(5,"1");
+		pstmt.setString(5,apply.getName());
+		pstmt.setString(6,apply.getIDnum());
+		pstmt.setString(7,apply.getPhonenum());
+		pstmt.setString(8,apply.getCareer());
 		
 		boolean t;
 		if(pstmt.executeUpdate()>0) {
@@ -102,9 +105,9 @@ public class ApplyDao {
 		return applyArrayList;
 	}	
 	
-	//显示某一项目中报名志愿者的列表
-	public ArrayList<Volunteer> showVolunteer(Connection con,String pro_id) throws SQLException {
-		ArrayList<Volunteer> volunteerArrayList = new ArrayList<Volunteer>();
+	//显示某一项目中已报名志愿者的列表
+	public ArrayList<apply_project> showVolunteer(Connection con,String pro_id) throws SQLException {
+		ArrayList<apply_project> volunteerArrayList = new ArrayList<apply_project>();
 		
 		String sql1 = "select * from apply_project where pro_id = ?";
 		PreparedStatement pstmt1=con.prepareStatement(sql1);
@@ -113,18 +116,12 @@ public class ApplyDao {
 		
 		while(rs1.next()){ 
 			String v_id = rs1.getString("v_id");
-		    String sql = "select * from volunteer where v_id = ?";
-		    PreparedStatement pstmt=con.prepareStatement(sql);
-		    pstmt.setString(1,v_id);
-		    Volunteer volunteerShow=null ;
-		    ResultSet rs = pstmt.executeQuery();
-		
-		    String vid = rs.getString("v_id");
-		    String v_name = rs.getString("v_name");
-		    int v_id_number = rs.getInt("v_id_number");
-		    int v_credit = rs.getInt("v_credit");
+		    String name = rs1.getString("name");
+		    String idnumber = rs1.getString("idnumber");
+		    String phonenumber = rs1.getString("phonenumber");
+		    String career = rs1.getString("career");
 		    
-		    volunteerShow = new Volunteer(vid,v_name,v_id_number,v_credit);
+		    apply_project volunteerShow = new apply_project(v_id,name,idnumber,phonenumber,career);
 		    volunteerArrayList.add(volunteerShow);
 		 }
 			

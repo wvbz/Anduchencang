@@ -235,6 +235,37 @@ public class ProjectDao {
 			return projectArrayList;
 		}
 		
+		//查询某发布者已结束的项目
+		public ArrayList<Project> showPend(Connection con,String pub_id) throws SQLException {
+			ArrayList<Project> projectArrayList = new ArrayList<Project>();  
+			String sql = "select * from pub_project where pub_id=? and audit_state='4'";
+			PreparedStatement pstmt=con.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){ 
+				
+				String pro_id = rs.getString("pro_id");
+				String sql1 = "select * from project where pro_id=?";
+				PreparedStatement pstmt1=con.prepareStatement(sql1);
+				ResultSet rs1 = pstmt.executeQuery();
+				
+				String id = rs1.getString("pro_id");
+				String pro_name = rs1.getString("pro_name");
+				String pro_intro = rs1.getString("pro_intro");
+				String pro_info = rs1.getString("pro_info");
+				String pro_state = rs1.getString("pro_state");
+				Date pro_s_time = rs1.getDate("pro_s_time");
+				Date pro_e_time = rs1.getDate("pro_e_time");
+				String pro_type = rs1.getString("pro_type");
+				String place = rs1.getString("pro_place");
+				int v_num = rs1.getInt("v_num");
+				
+				Project project = new Project(pro_id,pro_name,pro_intro,pro_info,pro_state,pro_s_time,pro_e_time,pro_type,place,v_num);
+				projectArrayList.add(project);
+			}
+			return projectArrayList;
+		}
+		
 		//显示待审核项目列表
 		public ArrayList<Project> showDSpro(Connection con) throws SQLException {
 			ArrayList<Project> projectArrayList = new ArrayList<Project>();

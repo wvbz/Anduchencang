@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import Dao.ApplyDao;
 import Dao.ProjectDao;
 import Entity.Project;
-import Entity.Volunteer;
+import Entity.apply_project;
 
 /**
  * Servlet implementation class projectNowServlet
@@ -60,7 +60,7 @@ public class projectNowServlet extends HttpServlet {
 			ProjectDao project=new ProjectDao();
 			ApplyDao volunteer=new ApplyDao();
 			Project projectDetails=project.showProject(con,pro_id);
-			ArrayList<Volunteer> volunteerShow=volunteer.showVolunteer(con, pro_id);
+			ArrayList<apply_project> volunteerShow=volunteer.showVolunteer(con, pro_id);
 			
 			request.setAttribute("projectDetails", projectDetails);
 			request.setAttribute("volunteerShow", volunteerShow);

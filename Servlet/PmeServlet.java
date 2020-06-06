@@ -63,12 +63,15 @@ public class PmeServlet extends HttpServlet {
             ProjectDao project = new ProjectDao();
             ApplyDao apply = new ApplyDao();
 			Publisher publisherShow = publisher.showPublisher(con,pub_id);
+			ArrayList<Project> projectEnd = project.showPend(con,pub_id);
 			ArrayList<Project> projectDoing = project.showPdoing(con, pub_id);
 			ArrayList<apply_project> applyList = apply.showApply(con, pub_id);
 			
 			request.setAttribute("publisherShow", publisherShow);
 			request.setAttribute("projectDoing", projectDoing);
+			request.setAttribute("projectEnd", projectEnd);
 			request.setAttribute("applyList", applyList);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
