@@ -129,5 +129,30 @@ public class ApplyDao {
 		
 		return volunteerArrayList;
 	}	
+	
+	//申请审核通过
+	public void applyPass(Connection con,String v_id,String pro_id) throws SQLException {
+		String sql="update apply_project set apply_state='2' where v_id=? and pro_id=?";
+		PreparedStatement pstmt=con.prepareStatement(sql);
+		pstmt.setString(1,v_id);
+		pstmt.setString(2,pro_id);
+		boolean t;
+		if(pstmt.executeUpdate()>0) {
+			t=true;
+		}
+		
+		//通知志愿者
+		String sql3="select * from project where pro_id=?";
+		PreparedStatement pstmt3=con.prepareStatement(sql3);
+		pstmt3.setString(1,pro_id);
+		ResultSet rs3 = pstmt3.executeQuery();
+		String pro_name=rs3.getString("pro_name");
+		
+		String sql2="insert into notice(id,content) values(?,?) ";
+		PreparedStatement pstmt2=con.prepareStatement(sql2);
+		pstmt2.setString(1,v_id);
+		pstmt2.setString(2,"您报名的项目"+pro_name+"已通过申请");
+
+	}
 
 }

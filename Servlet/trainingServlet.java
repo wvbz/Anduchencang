@@ -1,7 +1,7 @@
 package Servlet;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -55,13 +55,19 @@ public class trainingServlet extends HttpServlet {
 		 try {
 			 con = dbUtil.getConnection();
 
-			 String pro_id = request.getParameter("pro_id");	
+			 String pro_id = request.getParameter("pro_id");
+			 String t_content = request.getParameter("t_content");
+			 Date t_s_time = request.getParameter("t_s_time");
+			 Date t_e_time = request.getParameter("t_e_time");
 			 System.out.println(pro_id);
-				
-			 TrainDao train=new TrainDao();
-			 train t=train.showTrain(con,pro_id);
+			 System.out.println(t_content);
+			 System.out.println(t_s_time);
+			 System.out.println(t_e_time);
 			 
-			 request.setAttribute("t", t);
+			 train train=new train(pro_id,t_content,t_s_time,t_e_time);
+			 TrainDao t=new TrainDao();
+			 t.createTrain(con, train);
+			 
 				
 		} catch (Exception e) {
 			 e.printStackTrace();

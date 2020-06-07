@@ -8,12 +8,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import Entity.Project;
 import Entity.train;
 import Entity.training;
 
 public class TrainDao {
 	//创建新培训
-	public void createTrain(Connection con,train train,training training) throws SQLException {
+	public void createTrain(Connection con,train train) throws SQLException {
 		//插入一个新的培训
 		String sql1="insert into train(pro_id,t_content,t_s_time,t_e_time) values(?,?,?,?) ";
 		PreparedStatement pstmt1=con.prepareStatement(sql1);
@@ -26,15 +27,27 @@ public class TrainDao {
 			t1=true;
 		}
 		
-		//培训状态
-		String sql2="insert into training(pro_id,t_state) values(?,?) ";
+		//通知志愿者
+		String sql2="select v_id from apply_project where pro_id=?";
 		PreparedStatement pstmt2=con.prepareStatement(sql2);
-		pstmt2.setString(1,training.getPro_id());
-		pstmt2.setString(2, "1");
-		boolean t2;
-		if(pstmt2.executeUpdate()>0) {
-			t2=true;
+		pstmt2.setString(1,train.getPro_id());
+		ResultSet rs = pstmt2.executeQuery();
+		
+		while(rs.next()){ 
+			String id=rs.getString("v_id");
+			String sql3="select * from project where pro_id=?";
+			PreparedStatement pstmt3=con.prepareStatement(sql3);
+			pstmt3.setString(1,train.getPro_id());
+			ResultSet rs3 = pstmt3.executeQuery();
+			String pro_name=rs3.getString("pro_name");
+			
+			String sql4="insert into notice(id,content) values(?,?) ";
+			PreparedStatement pstmt4=con.prepareStatement(sql4);
+			pstmt4.setString(1,id);
+			pstmt4.setString(2,pro_name+"已发布培训");
 		}
+		
+		
 	}
 	
 	//查询培训状态
@@ -48,10 +61,8 @@ public class TrainDao {
 		pstmt.setString(1, pro_id);
 		ResultSet rs=pstmt.executeQuery();
 		
-		if(rs.next()){
-			stateStr = rs.getString("t_state");
-		}
 		
+		stateStr = rs.getString("t_state");
 		state = Integer.parseInt(stateStr);
 
 		if(state==1) {

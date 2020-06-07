@@ -56,7 +56,7 @@ public class PmeServlet extends HttpServlet {
 			con = dbUtil.getConnection();
 			
 			
-			String pub_id = request.getParameter("pub_id");	
+			String pub_id = UserNow.id;	
 			System.out.println(pub_id);
 			
             PublisherDao publisher = new PublisherDao();
