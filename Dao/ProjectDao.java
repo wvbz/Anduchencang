@@ -167,6 +167,7 @@ public class ProjectDao {
 				t=true;
 			}
 			
+			//更新项目状态
 			String sql1="update pub_project set audit_state='2' where pro_id=?";
 			PreparedStatement pstmt1=con.prepareStatement(sql1);
 			pstmt1.setString(1,pro_id);
@@ -174,6 +175,24 @@ public class ProjectDao {
 			if(pstmt1.executeUpdate()>0) {
 				t1=true;
 			}
+			
+			//显示通知
+			String sql2="select * from project where pro_id=?";
+			PreparedStatement pstmt2=con.prepareStatement(sql2);
+			pstmt2.setString(1,pro_id);
+			ResultSet rs2 = pstmt2.executeQuery();
+			String pro_name=rs2.getString("pro_name");
+			
+			String sql3="select * from pub_project where pro_id=?";
+			PreparedStatement pstmt3=con.prepareStatement(sql3);
+			pstmt3.setString(1,pro_id);
+			ResultSet rs3 = pstmt2.executeQuery();
+			String pub_id=rs3.getString("pub_id");
+			
+			String sql4="insert into notice(id,content) values(?,?) ";
+			PreparedStatement pstmt4=con.prepareStatement(sql4);
+			pstmt4.setString(1,pub_id);
+			pstmt4.setString(2,"您发布的项目"+pro_name+"已通过申请");
 
 		}
 		
